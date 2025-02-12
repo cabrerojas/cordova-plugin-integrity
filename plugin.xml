@@ -1,0 +1,19 @@
+<plugin id="cordova-plugin-integrity" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>IntegrityPlugin</name>
+    <!-- Registrar el módulo JavaScript -->
+    <js-module name="IntegrityPlugin" src="www/integrityplugin.js">
+        <clobbers target="cordova.plugins.IntegrityPlugin" />
+    </js-module>
+     <platform name="android">
+        <!-- Registrar la clase Java en el `config.xml` de Cordova -->
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="IntegrityPlugin">
+                <param name="android-package" value="cl.oneapp.integrityplugin.IntegrityPlugin" />
+            </feature>
+        </config-file>
+
+        <!-- Registrar el código Java -->
+        <source-file src="src/android/cl/oneapp/integrityplugin/IntegrityPlugin.java" target-dir="src/cl/oneapp/integrityplugin" />
+
+    </platform>
+</plugin>
